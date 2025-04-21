@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ImmoCool</title>
+    <meta name="description" content="ImmoCool - Votre partenaire immobilier de confiance au Congo. Trouvez la maison de vos rêves parmi notre sélection de propriétés à Brazzaville, Pointe-Noire et plus.">
+    <meta name="keywords" content="immobilier, Congo, Brazzaville, Pointe-Noire, maison, appartement, villa, location, achat, vente">
+    <meta name="author" content="ImmoCool">
+    <title>ImmoCool - Votre partenaire immobilier au Congo</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/logo.jpg">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 <body>
     <header class="header">
@@ -14,12 +21,18 @@
                     <img src="images/logo.jpg" alt="ImmoCool Logo" class="logo-img">
                     <span class="logo-text">Immo <span>Cool</span></span>
                 </a>
+                <button class="menu-toggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="overlay"></div>
                 <ul class="liens">
-                    <li><a href="">accueil</a></li>
+                    <li><a href="#" class="active">accueil</a></li>
                     <li><a href="#services">services</a></li>
                     <li><a href="#apropos">apropos</a></li>
                     <li><a href="#contact">contact</a></li>
-                    <li><a href="" class="buton">connexion</a></li>
+                    <li><a href="#" class="buton">connexion</a></li>
                 </ul>   
             </nav>
         </div>
@@ -27,7 +40,7 @@
 
     <section class="baniere">
         <div class="conteneur">
-            <div class="baniere-contenu">
+            <div class="baniere-contenu" data-aos="fade-up" data-aos-delay="100">
                 <h1 class="titre">Bienvenue sur Immo <span>Cool</span></h1>
                 <p class="sous-titre">Votre partenaire immobilier de confiance</p>
                 <div class="recherche">
@@ -66,30 +79,29 @@
         </div>
     </section>
 
-
     <section class="apropos" id="apropos">
         <div class="conteneur">
             <div class="apropos-contenu">
-                <div class="apropos-image">
+                <div class="apropos-image" data-aos="fade-right" data-aos-delay="200">
                     <img src="images/apropos.jpg" alt="À propos de ImmoCool">
                 </div>
-                <div class="apropos-texte">
+                <div class="apropos-texte" data-aos="fade-left" data-aos-delay="200">
                     <h2 class="titre">À propos de <span>ImmoCool</span></h2>
                     <p class="description">Bienvenue chez ImmoCool, votre partenaire de confiance dans le secteur immobilier au Congo. Depuis notre création, nous nous engageons à offrir des services immobiliers de qualité supérieure à nos clients.</p>
                     
                     <div class="caracteristiques">
                         <div class="caracteristique">
-                            <i class="icon">🏠</i>
+                            <i class="icon fas fa-home"></i>
                             <h3>Large Sélection</h3>
                             <p>Plus de 1000 propriétés disponibles dans tout le pays</p>
                         </div>
                         <div class="caracteristique">
-                            <i class="icon">🤝</i>
+                            <i class="icon fas fa-handshake"></i>
                             <h3>Service Personnalisé</h3>
                             <p>Une équipe dédiée à votre recherche immobilière</p>
                         </div>
                         <div class="caracteristique">
-                            <i class="icon">✨</i>
+                            <i class="icon fas fa-star"></i>
                             <h3>Qualité Garantie</h3>
                             <p>Des biens sélectionnés et vérifiés par nos experts</p>
                         </div>
@@ -103,25 +115,27 @@
 
     <section class="services" id="services">
         <div class="conteneur">
-            <h2 class="titre">Nos services</h2>
-            <p class="sous-titre">Découvrez nos services de qualité</p>
+            <div class="centre" data-aos="fade-up">
+                <h2 class="titre">Nos services</h2>
+                <p class="sous-titre">Découvrez nos services de qualité</p>
+            </div>
 
-            <div class="services-grille">
-                <div class="carte-service">
+            <div class="services-grille" data-aos="fade-up" data-aos-delay="300">
+                <div class="carte-service" data-aos="flip-up" data-aos-delay="100">
                     <div class="details-service">
                         <h3 class="titre-service">Achat</h3>
                         <p class="description-service">Achetez votre maison de rêve avec nous.</p>
                     </div>
                 </div>
 
-                <div class="carte-service">
+                <div class="carte-service" data-aos="flip-up" data-aos-delay="100">
                     <div class="details-service">
                         <h3 class="titre-service">Vente</h3>
                         <p class="description-service">Vendez votre propriété rapidement et facilement.</p>
                     </div>
                 </div>
 
-                <div class="carte-service">
+                <div class="carte-service" data-aos="flip-up" data-aos-delay="100">
                     <div class="details-service">
                         <h3 class="titre-service">Location</h3>
                         <p class="description-service">Trouvez la maison parfaite à louer.</p>
@@ -129,14 +143,17 @@
                 </div>
             </div>
         </div>
+    </section>
 
-    <section class="maison" >
+    <section class="maison">
         <div class="conteneur">
-            <h2 class="titre">Nos maisons à la une</h2>
-            <p class="sous-titre">Découvrez nos biens les plus prestigieux choisis pour vous</p>
+            <div class="centre" data-aos="fade-up">
+                <h2 class="titre">Nos maisons à la une</h2>
+                <p class="sous-titre">Découvrez nos biens les plus prestigieux choisis pour vous</p>
+            </div>
 
-            <div class="maison-grille">
-                <div class="carte-maison">
+            <div class="maison-grille" data-aos="fade-up" data-aos-delay="300">
+                <div class="carte-maison" data-aos="zoom-in" data-aos-delay="100">
                     <div class="image-maison">
                         <img src="images/service.jpg" alt="Maison 1">
                     </div>
@@ -148,7 +165,7 @@
                     </div>
                 </div>
 
-                <div class="carte-maison">
+                <div class="carte-maison" data-aos="zoom-in" data-aos-delay="100">
                     <div class="image-maison">
                         <img src="images/service.jpg" alt="Maison 2">
                     </div>
@@ -160,7 +177,7 @@
                     </div>
                 </div>
 
-                <div class="carte-maison">
+                <div class="carte-maison" data-aos="zoom-in" data-aos-delay="100">
                     <div class="image-maison">
                         <img src="images/service.jpg" alt="Maison 3">
                     </div>
@@ -180,62 +197,74 @@
             <h2 class="titre">Contactez-nous</h2>
             <p class="sous-titre">Nous sommes là pour répondre à toutes vos questions</p>
             
-            <div class="contact-contenu">
-                <div class="contact-info">
+            <div class="contact-contenu" data-aos="fade-up" data-aos-delay="200">
+                <div class="contact-info" data-aos="fade-right" data-aos-delay="300">
                     <div class="info-item">
-                        <i class="icon">📍</i>
+                        <i class="icon fas fa-map-marker-alt"></i>
                         <h3>Notre adresse</h3>
                         <p>123 Avenue de la paix <br>Brazzaville, Congo</p>
                     </div>
                     
                     <div class="info-item">
-                        <i class="icon">📞</i>
+                        <i class="icon fas fa-phone"></i>
                         <h3>Téléphone</h3>
                         <p>+242 06 933 90 97<br>+242 05 585 23 59</p>
                     </div>
                     
                     <div class="info-item">
-                        <i class="icon">✉️</i>
+                        <i class="icon fas fa-envelope"></i>
                         <h3>Email</h3>
                         <p>immocool@gmail.com<br>Www.immocool.cg</p>
                     </div>
                     
                     <div class="info-item">
-                        <i class="icon">⏰</i>
+                        <i class="icon fas fa-clock"></i>
                         <h3>Horaires d'ouverture</h3>
                         <p>Lundi - Vendredi: 8h - 18h<br>Samedi: 9h - 15h</p>
                     </div>
                 </div>
                 
-                <div class="contact-formulaire">
-                    <form  class="formulaire-contact">
+                <div class="contact-formulaire" data-aos="fade-left" data-aos-delay="300">
+                    <form id="contactForm" class="formulaire-contact">
                         <div class="formulaire-element">
-                            <input type="text" name="nom" placeholder="Votre nom" required>
+                            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+                            <small class="error-message" id="nomError"></small>
                         </div>
                         
                         <div class="formulaire-element">
-                            <input type="email" name="email" placeholder="Votre email" required>
+                            <input type="email" id="email" name="email" placeholder="Votre email" required>
+                            <small class="error-message" id="emailError"></small>
                         </div>
                         
                         <div class="formulaire-element">
-                            <input type="tel" name="telephone" placeholder="Votre téléphone" required>
+                            <input type="tel" id="telephone" name="telephone" placeholder="Votre téléphone" required>
+                            <small class="error-message" id="telephoneError"></small>
                         </div>
                         
                         <div class="formulaire-element">
-                            <select name="sujet" required>
+                            <select id="sujet" name="sujet" required>
                                 <option value="">Sélectionnez un sujet</option>
                                 <option value="achat">Achat de bien</option>
                                 <option value="vente">Vente de bien</option>
                                 <option value="location">Location</option>
                                 <option value="autre">Autre demande</option>
                             </select>
+                            <small class="error-message" id="sujetError"></small>
                         </div>
                         
                         <div class="formulaire-element">
-                            <textarea name="message" placeholder="Votre message" required rows="5"></textarea>
+                            <textarea id="message" name="message" placeholder="Votre message" required rows="5"></textarea>
+                            <small class="error-message" id="messageError"></small>
                         </div>
                         
-                        <button type="submit" class="buton">Envoyer le message</button>
+                        <button type="submit" id="submitBtn" class="buton">Envoyer le message</button>
+                        <div id="formStatus" class="form-status">
+                            <div id="spinner" class="spinner hidden"></div>
+                            <div id="successMessage" class="success-message hidden">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Votre message a été envoyé avec succès! Nous vous contacterons bientôt.</p>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -244,7 +273,7 @@
 
     <footer class="footer">
         <div class="conteneur">
-            <div class="footer-contenu">
+            <div class="footer-contenu" data-aos="fade-up" data-aos-delay="100">
                 <div class="footer-logo">
                     <a href="#" class="logo">
                         <img src="images/logo.jpg" alt="ImmoCool Logo" class="logo-img">
@@ -278,5 +307,17 @@
             </div>
         </div>
     </footer>
+
+    <a href="#" class="scroll-top" id="scrollTop" aria-label="Retour en haut de page">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init('f3ExnLGaAnvHCq1_Z');
+        })();
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
