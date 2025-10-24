@@ -76,28 +76,84 @@ document.addEventListener('DOMContentLoaded', function() {
     
     addInitialAnimations();
     toggleScrollTopButton();
+    initSmoothScrolling();
+    initPropertyCardAnimations();
 });
 
 window.addEventListener('resize', function() {
     AOS.refresh();
 });
 
+// Smooth scrolling for anchor links
+function initSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && href !== '') {
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+}
+
+// Property card animations
+function initPropertyCardAnimations() {
+    const cards = document.querySelectorAll('.carte-maison, .carte-service');
+    cards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'all 0.6s ease';
+    });
+}
+
+// Add loading animation to images
+document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+    img.addEventListener('load', function() {
+        this.style.animation = 'fadeIn 0.5s ease-in';
+    });
+});
+
 window.addEventListener('scroll', function() {
     const scrollPosition = window.pageYOffset;
     
+    // Parallax effect on banner
     const bannerSection = document.querySelector('.baniere');
     if (bannerSection) {
         const offset = scrollPosition * 0.4;
         bannerSection.style.backgroundPositionY = `${offset}px`;
     }
     
+    // Header scroll effect
     const header = document.querySelector('.header');
-    if (header && scrollPosition > 100) {
-        header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-        header.style.boxShadow = 'var(--shadow-md)';
-    } else if (header) {
-        header.style.backgroundColor = 'var(--white)';
+    if (header) {
+        if (scrollPosition > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     }
+    
+    // Fade in elements on scroll
+    const elements = document.querySelectorAll('.carte-maison, .carte-service, .caracteristique');
+    elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+        
+        if (elementTop < windowHeight - 100) {
+            element.style.opacity = '1';
+            element.style.transform = 'translateY(0)';
+        }
+    });
 });
 
 
@@ -197,6 +253,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function showError(input, errorElement, message) {
         input.classList.add('error');
         errorElement.textContent = message;
+        input.style.animation = 'shake 0.5s';
+        setTimeout(() => {
+            input.style.animation = '';
+        }, 500);
     }
 
 
@@ -230,6 +290,8 @@ document.addEventListener('DOMContentLoaded', function() {
         successMessage.style.display = 'none';
         
         submitBtn.disabled = true;
+        submitBtn.classList.add('loading');
+        submitBtn.textContent = 'Envoi en cours...';
         spinner.style.display = 'block';
         
         const templateParams = {
@@ -246,18 +308,31 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 spinner.style.display = 'none';
                 successMessage.style.display = 'flex';
+                submitBtn.textContent = 'Message envoyé !';
+                submitBtn.classList.remove('loading');
                 
                 setTimeout(() => {
                     contactForm.reset();
                     successMessage.style.display = 'none';
                     submitBtn.disabled = false;
+                    submitBtn.textContent = 'Envoyer le message';
                 }, 3000);
             }, function(error) {
                 console.log('FAILED...', error);
                 
                 spinner.style.display = 'none';
+                submitBtn.classList.remove('loading');
+                submitBtn.textContent = 'Envoyer le message';
                 
-                alert('Une erreur est survenue lors de l\'envoi de votre message. Veuillez réessayer plus tard.');
+                const errorMsg = document.createElement('div');
+                errorMsg.className = 'error-message-global';
+                errorMsg.innerHTML = '<i class="fas fa-exclamation-circle"></i> Une erreur est survenue. Veuillez réessayer.';
+                errorMsg.style.cssText = 'color: #e74c3c; text-align: center; margin-top: 10px; padding: 10px; background: rgba(231, 76, 60, 0.1); border-radius: 8px;';
+                document.getElementById('formStatus').appendChild(errorMsg);
+                
+                setTimeout(() => {
+                    errorMsg.remove();
+                }, 3000);
                 
                 submitBtn.disabled = false;
             });

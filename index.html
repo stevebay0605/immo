@@ -6,6 +6,10 @@
     <meta name="description" content="ImmoCool - Votre partenaire immobilier de confiance au Congo. Trouvez la maison de vos rêves parmi notre sélection de propriétés à Brazzaville, Pointe-Noire et plus.">
     <meta name="keywords" content="immobilier, Congo, Brazzaville, Pointe-Noire, maison, appartement, villa, location, achat, vente">
     <meta name="author" content="ImmoCool">
+    <meta name="theme-color" content="#e74c3c">
+    <meta property="og:title" content="ImmoCool - Votre partenaire immobilier au Congo">
+    <meta property="og:description" content="Trouvez la maison de vos rêves au Congo. Services d'achat, vente et location de propriétés.">
+    <meta property="og:type" content="website">
     <title>ImmoCool - Votre partenaire immobilier au Congo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="images/logo.jpg">
@@ -14,6 +18,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 <body>
+    <a href="#baniere" class="skip-to-content">Aller au contenu principal</a>
     <header class="header">
         <div class="conteneur">
             <nav class="navbar">
@@ -38,7 +43,7 @@
         </div>
     </header>
 
-    <section class="baniere">
+    <section class="baniere" id="baniere">
         <div class="conteneur">
             <div class="baniere-contenu" data-aos="fade-up" data-aos-delay="100">
                 <h1 class="titre">Bienvenue sur Immo <span>Cool</span></h1>
@@ -122,23 +127,32 @@
 
             <div class="services-grille" data-aos="fade-up" data-aos-delay="300">
                 <div class="carte-service" data-aos="flip-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
                     <div class="details-service">
                         <h3 class="titre-service">Achat</h3>
-                        <p class="description-service">Achetez votre maison de rêve avec nous.</p>
+                        <p class="description-service">Achetez votre maison de rêve avec nous. Nos experts vous accompagnent dans toutes les étapes.</p>
                     </div>
                 </div>
 
-                <div class="carte-service" data-aos="flip-up" data-aos-delay="100">
+                <div class="carte-service" data-aos="flip-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
                     <div class="details-service">
                         <h3 class="titre-service">Vente</h3>
-                        <p class="description-service">Vendez votre propriété rapidement et facilement.</p>
+                        <p class="description-service">Vendez votre propriété rapidement et facilement. Bénéficiez de notre réseau étendu.</p>
                     </div>
                 </div>
 
-                <div class="carte-service" data-aos="flip-up" data-aos-delay="100">
+                <div class="carte-service" data-aos="flip-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
                     <div class="details-service">
                         <h3 class="titre-service">Location</h3>
-                        <p class="description-service">Trouvez la maison parfaite à louer.</p>
+                        <p class="description-service">Trouvez la maison parfaite à louer. Des biens vérifiés et de qualité pour vous.</p>
                     </div>
                 </div>
             </div>
@@ -155,37 +169,67 @@
             <div class="maison-grille" data-aos="fade-up" data-aos-delay="300">
                 <div class="carte-maison" data-aos="zoom-in" data-aos-delay="100">
                     <div class="image-maison">
-                        <img src="images/service.jpg" loading="lazy" alt="Maison 1">
+                        <img src="images/service.jpg" loading="lazy" alt="Villa moderne Brazzaville">
+                        <div class="badge-statut">À vendre</div>
                     </div>
                     <div class="details-maison">
-                        <h3 class="titre-maison">Maison de luxe</h3>
-                        <p class="description-maison">Une magnifique maison avec piscine et jardin.</p>
-                        <p class="prix-maison">Prix: 5000000 Fcfa</p>
-                        <a href="" class="buton">Voir plus</a>
+                        <div class="localisation">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Brazzaville, Centre-ville</span>
+                        </div>
+                        <h3 class="titre-maison">Villa Moderne</h3>
+                        <p class="description-maison">Superbe villa avec 5 chambres, piscine, jardin paysagé et garage double.</p>
+                        <div class="caracteristiques-maison">
+                            <span><i class="fas fa-bed"></i> 5 chambres</span>
+                            <span><i class="fas fa-bath"></i> 4 bains</span>
+                            <span><i class="fas fa-ruler-combined"></i> 350m²</span>
+                        </div>
+                        <p class="prix-maison">85.000.000 FCFA</p>
+                        <a href="#" class="buton">Voir plus</a>
                     </div>
                 </div>
 
-                <div class="carte-maison" data-aos="zoom-in" data-aos-delay="100">
+                <div class="carte-maison" data-aos="zoom-in" data-aos-delay="200">
                     <div class="image-maison">
-                        <img src="images/service.jpg" loading="lazy" alt="Maison 2">
+                        <img src="images/service.jpg" loading="lazy" alt="Appartement Pointe-Noire">
+                        <div class="badge-statut location">À louer</div>
                     </div>
                     <div class="details-maison">
-                        <h3 class="titre-maison">Maison de luxe</h3>
-                        <p class="description-maison">Une magnifique maison avec piscine et jardin.</p>
-                        <p class="prix-maison">Prix: 5000000 Fcfa</p>
-                        <a href="" class="buton">Voir plus</a>
+                        <div class="localisation">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Pointe-Noire, Quartier résidentiel</span>
+                        </div>
+                        <h3 class="titre-maison">Appartement Standing</h3>
+                        <p class="description-maison">Bel appartement meublé de 3 chambres avec vue sur mer, parking sécurisé.</p>
+                        <div class="caracteristiques-maison">
+                            <span><i class="fas fa-bed"></i> 3 chambres</span>
+                            <span><i class="fas fa-bath"></i> 2 bains</span>
+                            <span><i class="fas fa-ruler-combined"></i> 120m²</span>
+                        </div>
+                        <p class="prix-maison">450.000 FCFA/mois</p>
+                        <a href="#" class="buton">Voir plus</a>
                     </div>
                 </div>
 
-                <div class="carte-maison" data-aos="zoom-in" data-aos-delay="100">
+                <div class="carte-maison" data-aos="zoom-in" data-aos-delay="300">
                     <div class="image-maison">
-                        <img src="images/service.jpg" loading="lazy" alt="Maison 3">
+                        <img src="images/service.jpg" loading="lazy" alt="Maison Dolisie">
+                        <div class="badge-statut">À vendre</div>
                     </div>
                     <div class="details-maison">
-                        <h3 class="titre-maison">Maison de luxe</h3>
-                        <p class="description-maison">Une magnifique maison avec piscine et jardin.</p>
-                        <p class="prix-maison">Prix: 5000000 Fcfa</p>
-                        <a href="" class="buton">Voir plus</a>
+                        <div class="localisation">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Dolisie, Zone calme</span>
+                        </div>
+                        <h3 class="titre-maison">Maison Familiale</h3>
+                        <p class="description-maison">Maison spacieuse de 4 chambres avec grand jardin, idéale pour une famille.</p>
+                        <div class="caracteristiques-maison">
+                            <span><i class="fas fa-bed"></i> 4 chambres</span>
+                            <span><i class="fas fa-bath"></i> 3 bains</span>
+                            <span><i class="fas fa-ruler-combined"></i> 200m²</span>
+                        </div>
+                        <p class="prix-maison">45.000.000 FCFA</p>
+                        <a href="#" class="buton">Voir plus</a>
                     </div>
                 </div>
             </div>
@@ -304,7 +348,6 @@
             
             <div class="footer-fond">
                 <p>&copy; 2025 ImmoCool. Tous droits réservés.</p>
-                <p>&copy; 2026 ImmoCool. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
