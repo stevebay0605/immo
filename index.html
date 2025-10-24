@@ -6,31 +6,52 @@
     <meta name="description" content="ImmoCool - Votre partenaire immobilier de confiance au Congo. Trouvez la maison de vos rêves parmi notre sélection de propriétés à Brazzaville, Pointe-Noire et plus.">
     <meta name="keywords" content="immobilier, Congo, Brazzaville, Pointe-Noire, maison, appartement, villa, location, achat, vente">
     <meta name="author" content="ImmoCool">
+    <meta name="robots" content="index,follow">
+    <meta name="theme-color" content="#e74c3c">
+    <meta name="format-detection" content="telephone=no">
     <title>ImmoCool - Votre partenaire immobilier au Congo</title>
+    <link rel="canonical" href="https://immocool.cg/">
+    <meta property="og:title" content="ImmoCool - Votre partenaire immobilier au Congo">
+    <meta property="og:description" content="Votre partenaire immobilier de confiance au Congo. Parcourez nos biens à Brazzaville, Pointe-Noire et plus.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="ImmoCool">
+    <meta property="og:url" content="https://immocool.cg/">
+    <meta property="og:image" content="images/baniere.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ImmoCool - Votre partenaire immobilier au Congo">
+    <meta name="twitter:description" content="Votre partenaire immobilier de confiance au Congo.">
+    <meta name="twitter:image" content="images/baniere.jpg">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" as="image" href="images/baniere.jpg" fetchpriority="high">
+
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="images/logo.jpg">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
-<body>
+<body id="top">
+    <a href="#contenu" class="skip-link">Aller au contenu principal</a>
     <header class="header">
         <div class="conteneur">
-            <nav class="navbar">
-                <a href="" class="logo">
+            <nav class="navbar" aria-label="Navigation principale">
+                <a href="#top" class="logo">
                     <img src="images/logo.jpg" alt="ImmoCool Logo" class="logo-img">
                     <span class="logo-text">Immo <span>Cool</span></span>
                 </a>
-                <button class="menu-toggle" aria-label="Menu">
+                <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="nav-links" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
                 <div class="overlay"></div>
-                <ul class="liens">
-                    <li><a href="#" class="active">accueil</a></li>
+                <ul class="liens" id="nav-links">
+                    <li><a href="#accueil" class="active" aria-current="page">accueil</a></li>
                     <li><a href="#services">services</a></li>
-                    <li><a href="#apropos">apropos</a></li>
+                    <li><a href="#apropos">à propos</a></li>
                     <li><a href="#contact">contact</a></li>
                     <li><a href="#" class="buton">connexion</a></li>
                 </ul>   
@@ -38,15 +59,19 @@
         </div>
     </header>
 
-    <section class="baniere">
+    <main id="contenu" tabindex="-1">
+    <section class="baniere" id="accueil">
         <div class="conteneur">
             <div class="baniere-contenu" data-aos="fade-up" data-aos-delay="100">
                 <h1 class="titre">Bienvenue sur Immo <span>Cool</span></h1>
                 <p class="sous-titre">Votre partenaire immobilier de confiance</p>
                 <div class="recherche">
-                    <form class="formulaire">
+                    <form class="formulaire" action="#" method="get">
+                        <fieldset>
+                            <legend class="sr-only">Recherche de propriétés</legend>
                         <div class="groupe">
-                            <select name="type" class="element">
+                            <label for="type-bien" class="sr-only">Type de bien</label>
+                            <select id="type-bien" name="type" class="element" aria-label="Type de bien">
                                 <option value="">Type de bien</option>
                                 <option value="maison">Maison</option>
                                 <option value="appartement">Appartement</option>
@@ -55,7 +80,8 @@
                             </select>
                         </div>
                         <div class="groupe">
-                            <select name="localisation" class="element">
+                            <label for="localisation" class="sr-only">Localisation</label>
+                            <select id="localisation" name="localisation" class="element" aria-label="Localisation">
                                 <option value="">Localisation</option>
                                 <option value="brazzaville">Brazzaville</option>
                                 <option value="pointe-noire">Pointe-Noire</option>
@@ -64,7 +90,8 @@
                             </select>
                         </div>
                         <div class="groupe">
-                            <select name="budget" class="element">
+                            <label for="budget" class="sr-only">Budget</label>
+                            <select id="budget" name="budget" class="element" aria-label="Budget">
                                 <option value="">Budget</option>
                                 <option value="1000000">1.000.000 FCFA</option>
                                 <option value="2000000">2.000.000 FCFA</option>
@@ -73,6 +100,7 @@
                             </select>
                         </div>
                         <button type="submit" class="buton">Rechercher</button>
+                        </fieldset>
                     </form>
                 </div>
             </div> 
@@ -83,7 +111,7 @@
         <div class="conteneur">
             <div class="apropos-contenu">
                 <div class="apropos-image" data-aos="fade-right" data-aos-delay="200">
-                    <img src="images/apropos.jpg" alt="À propos de ImmoCool">
+                    <img src="images/apropos.jpg" alt="À propos de ImmoCool" loading="lazy" decoding="async">
                 </div>
                 <div class="apropos-texte" data-aos="fade-left" data-aos-delay="200">
                     <h2 class="titre">À propos de <span>ImmoCool</span></h2>
@@ -155,7 +183,7 @@
             <div class="maison-grille" data-aos="fade-up" data-aos-delay="300">
                 <div class="carte-maison" data-aos="zoom-in" data-aos-delay="100">
                     <div class="image-maison">
-                        <img src="images/service.jpg" loading="lazy" alt="Maison 1">
+                        <img src="images/service.jpg" loading="lazy" decoding="async" alt="Maison 1">
                     </div>
                     <div class="details-maison">
                         <h3 class="titre-maison">Maison de luxe</h3>
@@ -167,7 +195,7 @@
 
                 <div class="carte-maison" data-aos="zoom-in" data-aos-delay="100">
                     <div class="image-maison">
-                        <img src="images/service.jpg" loading="lazy" alt="Maison 2">
+                        <img src="images/service.jpg" loading="lazy" decoding="async" alt="Maison 2">
                     </div>
                     <div class="details-maison">
                         <h3 class="titre-maison">Maison de luxe</h3>
@@ -179,7 +207,7 @@
 
                 <div class="carte-maison" data-aos="zoom-in" data-aos-delay="100">
                     <div class="image-maison">
-                        <img src="images/service.jpg" loading="lazy" alt="Maison 3">
+                        <img src="images/service.jpg" loading="lazy" decoding="async" alt="Maison 3">
                     </div>
                     <div class="details-maison">
                         <h3 class="titre-maison">Maison de luxe</h3>
@@ -214,7 +242,10 @@
                     <div class="info-item">
                         <i class="icon fas fa-envelope"></i>
                         <h3>Email</h3>
-                        <p>immocool@gmail.com<br>Www.immocool.cg</p>
+                        <p>
+                            <a href="mailto:immocool@gmail.com">immocool@gmail.com</a><br>
+                            <a href="https://immocool.cg" target="_blank" rel="noopener noreferrer">www.immocool.cg</a>
+                        </p>
                     </div>
                     
                     <div class="info-item">
@@ -225,42 +256,47 @@
                 </div>
                 
                 <div class="contact-formulaire" data-aos="fade-left" data-aos-delay="300">
-                    <form id="contactForm" class="formulaire-contact">
+                    <form id="contactForm" class="formulaire-contact" novalidate>
                         <div class="formulaire-element">
-                            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
-                            <small class="error-message" id="nomError"></small>
+                            <label for="nom" class="sr-only">Votre nom</label>
+                            <input type="text" id="nom" name="nom" placeholder="Votre nom" required autocomplete="name" aria-describedby="nomError">
+                            <small class="error-message" id="nomError" aria-live="polite"></small>
                         </div>
                         
                         <div class="formulaire-element">
-                            <input type="email" id="email" name="email" placeholder="Votre email" required>
-                            <small class="error-message" id="emailError"></small>
+                            <label for="email" class="sr-only">Votre email</label>
+                            <input type="email" id="email" name="email" placeholder="Votre email" required autocomplete="email" aria-describedby="emailError">
+                            <small class="error-message" id="emailError" aria-live="polite"></small>
                         </div>
                         
                         <div class="formulaire-element">
-                            <input type="tel" id="telephone" name="telephone" placeholder="Votre téléphone" required>
-                            <small class="error-message" id="telephoneError"></small>
+                            <label for="telephone" class="sr-only">Votre téléphone</label>
+                            <input type="tel" id="telephone" name="telephone" placeholder="Votre téléphone" required autocomplete="tel" inputmode="tel" aria-describedby="telephoneError">
+                            <small class="error-message" id="telephoneError" aria-live="polite"></small>
                         </div>
                         
                         <div class="formulaire-element">
-                            <select id="sujet" name="sujet" required>
+                            <label for="sujet" class="sr-only">Sujet</label>
+                            <select id="sujet" name="sujet" required aria-describedby="sujetError">
                                 <option value="">Sélectionnez un sujet</option>
                                 <option value="achat">Achat de bien</option>
                                 <option value="vente">Vente de bien</option>
                                 <option value="location">Location</option>
                                 <option value="autre">Autre demande</option>
                             </select>
-                            <small class="error-message" id="sujetError"></small>
+                            <small class="error-message" id="sujetError" aria-live="polite"></small>
                         </div>
                         
                         <div class="formulaire-element">
-                            <textarea id="message" name="message" placeholder="Votre message" required rows="5"></textarea>
-                            <small class="error-message" id="messageError"></small>
+                            <label for="message" class="sr-only">Votre message</label>
+                            <textarea id="message" name="message" placeholder="Votre message" required rows="5" aria-describedby="messageError" autocomplete="off"></textarea>
+                            <small class="error-message" id="messageError" aria-live="polite"></small>
                         </div>
                         
                         <button type="submit" id="submitBtn" class="buton">Envoyer le message</button>
-                        <div id="formStatus" class="form-status">
-                            <div id="spinner" class="spinner hidden"></div>
-                            <div id="successMessage" class="success-message hidden">
+                        <div id="formStatus" class="form-status" aria-live="polite">
+                            <div id="spinner" class="spinner hidden" role="status" aria-live="polite" aria-label="Chargement"></div>
+                            <div id="successMessage" class="success-message hidden" role="alert" aria-live="polite" aria-hidden="true">
                                 <i class="fas fa-check-circle"></i>
                                 <p>Votre message a été envoyé avec succès! Nous vous contacterons bientôt.</p>
                             </div>
@@ -271,6 +307,7 @@
         </div>
     </section>
 
+    </main>
     <footer class="footer">
         <div class="conteneur">
             <div class="footer-contenu" data-aos="fade-up" data-aos-delay="100">
@@ -285,7 +322,7 @@
                 <div class="footer-liens">
                     <h3>Liens rapides</h3>
                     <ul>
-                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#accueil">Accueil</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#apropos">À propos</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -303,22 +340,16 @@
             </div>
             
             <div class="footer-fond">
-                <p>&copy; 2025 ImmoCool. Tous droits réservés.</p>
-                <p>&copy; 2026 ImmoCool. Tous droits réservés.</p>
+                <p>&copy; <span id="currentYear"></span> ImmoCool. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-    <a href="#" class="scroll-top" id="scrollTop" aria-label="Retour en haut de page">
+    <a href="#top" class="scroll-top" id="scrollTop" aria-label="Retour en haut de page">
         <i class="fas fa-arrow-up"></i>
     </a>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init('f3ExnLGaAnvHCq1_Z');
-        })();
-    </script>
-    <script src="script.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script defer src="script.js"></script>
 </body>
 </html>
