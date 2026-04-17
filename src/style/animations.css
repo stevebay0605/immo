@@ -1,0 +1,541 @@
+/* ========================================
+   ANIMATIONS CSS - IMMOCOOL
+   ======================================== */
+
+/* Variables CSS pour les animations */
+:root {
+  --animation-duration-fast: 0.3s;
+  --animation-duration-normal: 0.5s;
+  --animation-duration-slow: 0.8s;
+  --animation-easing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ========================================
+   ANIMATIONS GÉNÉRALES
+   ======================================== */
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale in animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40%, 43% {
+    transform: translateY(-10px);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+  90% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+/* ========================================
+   CLASSES D'ANIMATIONS UTILITAIRES
+   ======================================== */
+
+.animate-fade-in {
+  animation: fadeIn var(--animation-duration-normal) var(--animation-easing-smooth) forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft var(--animation-duration-normal) var(--animation-easing-smooth) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInRight var(--animation-duration-normal) var(--animation-easing-smooth) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn var(--animation-duration-fast) var(--animation-easing-bounce) forwards;
+}
+
+.animate-bounce {
+  animation: bounce 1s var(--animation-easing-bounce);
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* ========================================
+   ANIMATIONS NAVBAR
+   ======================================== */
+
+.navbar {
+  animation: slideInDown 0.6s var(--animation-easing-smooth);
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar .brand {
+  animation: slideInLeft 0.8s var(--animation-easing-smooth);
+}
+
+.navbar .menu-links li {
+  opacity: 0;
+  animation: fadeIn 0.5s var(--animation-easing-smooth) forwards;
+}
+
+.navbar .menu-links li:nth-child(1) { animation-delay: 0.1s; }
+.navbar .menu-links li:nth-child(2) { animation-delay: 0.2s; }
+.navbar .menu-links li:nth-child(3) { animation-delay: 0.3s; }
+.navbar .menu-links li:nth-child(4) { animation-delay: 0.4s; }
+
+.navbar .menu-links li:hover {
+  transform: translateY(-2px);
+  transition: transform var(--animation-duration-fast) var(--animation-easing-smooth);
+}
+
+/* ========================================
+   ANIMATIONS HERO SECTION
+   ======================================== */
+
+#hero h1 {
+  opacity: 0;
+  animation: fadeIn 1s var(--animation-easing-smooth) 0.3s forwards;
+}
+
+#SearchContainer {
+  opacity: 0;
+  animation: slideInUp 0.8s var(--animation-easing-smooth) 0.6s forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-img img {
+  animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes slowZoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* ========================================
+   ANIMATIONS CARTES DE PROPRIÉTÉS
+   ======================================== */
+
+.property-card {
+  opacity: 0;
+  animation: fadeInUp 0.6s var(--animation-easing-smooth) forwards;
+}
+
+.property-card:nth-child(1) { animation-delay: 0.1s; }
+.property-card:nth-child(2) { animation-delay: 0.2s; }
+.property-card:nth-child(3) { animation-delay: 0.3s; }
+.property-card:nth-child(4) { animation-delay: 0.4s; }
+.property-card:nth-child(5) { animation-delay: 0.5s; }
+.property-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.property-card {
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+.property-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.property-card img {
+  transition: transform var(--animation-duration-slow) var(--animation-easing-smooth);
+}
+
+.property-card:hover img {
+  transform: scale(1.1);
+}
+
+.property-card .badge {
+  animation: pulse 2s infinite;
+}
+
+.property-card button {
+  transition: all var(--animation-duration-fast) var(--animation-easing-smooth);
+}
+
+.property-card button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.property-card button:active {
+  transform: scale(0.95);
+}
+
+/* ========================================
+   ANIMATIONS STATS
+   ======================================== */
+
+.stats-section .text-4xl {
+  opacity: 0;
+  animation: countUp 1s var(--animation-easing-smooth) forwards;
+}
+
+.stats-section .text-4xl:nth-child(1) { animation-delay: 0.2s; }
+.stats-section .text-4xl:nth-child(2) { animation-delay: 0.4s; }
+.stats-section .text-4xl:nth-child(3) { animation-delay: 0.6s; }
+.stats-section .text-4xl:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ========================================
+   ANIMATIONS SERVICES
+   ======================================== */
+
+.service-card {
+  opacity: 0;
+  animation: fadeInUp 0.6s var(--animation-easing-smooth) forwards;
+}
+
+.service-card:nth-child(1) { animation-delay: 0.1s; }
+.service-card:nth-child(2) { animation-delay: 0.2s; }
+.service-card:nth-child(3) { animation-delay: 0.3s; }
+
+.service-card {
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.service-card i {
+  transition: transform var(--animation-duration-normal) var(--animation-easing-bounce);
+}
+
+.service-card:hover i {
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* ========================================
+   ANIMATIONS BOUTONS
+   ======================================== */
+
+.btn, .btn-primary {
+  transition: all var(--animation-duration-fast) var(--animation-easing-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before, .btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before, .btn-primary:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn:hover, .btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active, .btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ========================================
+   ANIMATIONS FORMULAIRE DE RECHERCHE
+   ======================================== */
+
+#SearchContainer {
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+#SearchContainer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.input-search, .input {
+  transition: all var(--animation-duration-fast) var(--animation-easing-smooth);
+}
+
+.input-search:focus, .input:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* ========================================
+   ANIMATIONS AUTOCOMPLÉTION
+   ======================================== */
+
+.autocomplete-dropdown {
+  animation: slideInDown 0.3s var(--animation-easing-smooth);
+}
+
+.autocomplete-item {
+  transition: all var(--animation-duration-fast) var(--animation-easing-smooth);
+}
+
+.autocomplete-item:hover {
+  background: linear-gradient(90deg, #f0f9ff 0%, #e0f2fe 100%);
+  transform: translateX(5px);
+}
+
+/* ========================================
+   ANIMATIONS BOTTOM BAR (MOBILE)
+   ======================================== */
+
+#bottom-bar {
+  animation: slideInUp 0.5s var(--animation-easing-smooth);
+}
+
+#bottom-bar a {
+  transition: all var(--animation-duration-fast) var(--animation-easing-smooth);
+}
+
+#bottom-bar a:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+#bottom-bar a:active {
+  transform: scale(0.95);
+}
+
+/* ========================================
+   ANIMATIONS LOADING
+   ======================================== */
+
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 1.5s infinite;
+}
+
+/* ========================================
+   ANIMATIONS NOTIFICATIONS
+   ======================================== */
+
+.notification {
+  animation: slideInRight 0.3s var(--animation-easing-bounce);
+}
+
+.notification.removing {
+  animation: slideOutRight 0.3s var(--animation-easing-smooth);
+}
+
+@keyframes slideOutRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+/* ========================================
+   ANIMATIONS PAGE TRANSITIONS
+   ======================================== */
+
+.page-transition-enter {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+/* ========================================
+   ANIMATIONS RESPONSIVES
+   ======================================== */
+
+@media (max-width: 768px) {
+  .property-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .btn:hover, .btn-primary:hover {
+    transform: translateY(-1px);
+  }
+}
+
+/* ========================================
+   ANIMATIONS ACCESSIBILITÉ
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

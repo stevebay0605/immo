@@ -1,0 +1,104 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+@layer components {
+  .brand {
+    @apply font-bold text-gray-700 flex gap-2 items-center justify-center;
+  }
+  .navbar {
+    @apply flex items-center justify-between px-8 shadow-sm h-20;
+  }
+  .menu-links {
+    @apply hidden items-center justify-between px-8 gap-4 font-semibold text-slate-600 md:flex;
+  }
+  .menu-links .active {
+    @apply text-slate-700 border-b-2 border-slate-700;
+  }
+  .bottom-bar {
+    @apply w-full flex items-center justify-center py-2 px-8 gap-5 fixed z-20 bottom-0 md:hidden;
+  }
+  .card {
+    @apply bg-white h-80 rounded-2xl shadow-lg   border border-gray-200 w-[700px];
+  }
+
+  .btn {
+    @apply flex items-center gap-2 text-white px-4 py-2 rounded  transition-colors active:scale-90;
+  }
+  .btn-primary {
+    @apply hover:bg-slate-600 bg-slate-700 text-white rounded;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600 transition-colors;
+  }
+  .badge {
+    @apply bg-gray-200 text-gray-500 px-3 py-1  text-sm;
+  }
+  .badge-primary {
+    @apply bg-slate-700 text-white;
+  }
+  .badge-secondary {
+    @apply bg-gray-400/40 backdrop-blur-xl text-white;
+  }
+  .search-label {
+    @apply text-slate-600 text-[11px] md:text-[12px] font-bold uppercase;
+  }
+  .input {
+    @apply bg-gray-100/70 border border-gray-300 rounded px-4 py-3 focus:outline-none focus:ring-2 focus:ring-slate-500 w-full;
+  }
+  .input-search {
+    @apply bg-transparent border-none p-0 focus:ring-0 focus:outline-none focus:border-none 
+     font-semibold text-lg;
+  }
+  .alert {
+    @apply p-4 rounded mb-4;
+  }
+
+  .alert-success {
+    @apply bg-green-100 text-green-800 border border-green-200;
+  }
+
+  .alert-error {
+    @apply bg-red-100 text-red-800 border border-red-200;
+  }
+}
+
+@layer utilities {
+  .bg-primarry {
+    @apply bg-slate-700;
+  }
+  .text-primary {
+    @apply text-slate-700;
+  }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+  a.active {
+    @apply text-slate-700;
+  }
+}
+a.active svg {
+  @apply text-slate-700;
+}
+a.active::after {
+  @apply bg-slate-700 w-40 flex items-center justify-center;
+}
+.bg-primary {
+  @apply bg-slate-700;
+}
+
+.bg-secondary {
+  @apply bg-gray-500;
+}
+
+.bg-accent {
+  @apply bg-indigo-500;
+}
+
+.bg-surface {
+  @apply bg-gray-100;
+}
+.text-default {
+  @apply text-gray-600;
+}

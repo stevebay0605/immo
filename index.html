@@ -1,355 +1,659 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ImmoCool - Votre partenaire immobilier de confiance au Congo. Trouvez la maison de vos rêves parmi notre sélection de propriétés à Brazzaville, Pointe-Noire et plus.">
-    <meta name="keywords" content="immobilier, Congo, Brazzaville, Pointe-Noire, maison, appartement, villa, location, achat, vente">
-    <meta name="author" content="ImmoCool">
-    <meta name="robots" content="index,follow">
-    <meta name="theme-color" content="#e74c3c">
-    <meta name="format-detection" content="telephone=no">
-    <title>ImmoCool - Votre partenaire immobilier au Congo</title>
-    <link rel="canonical" href="https://immocool.cg/">
-    <meta property="og:title" content="ImmoCool - Votre partenaire immobilier au Congo">
-    <meta property="og:description" content="Votre partenaire immobilier de confiance au Congo. Parcourez nos biens à Brazzaville, Pointe-Noire et plus.">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="fr_FR">
-    <meta property="og:site_name" content="ImmoCool">
-    <meta property="og:url" content="https://immocool.cg/">
-    <meta property="og:image" content="images/baniere.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ImmoCool - Votre partenaire immobilier au Congo">
-    <meta name="twitter:description" content="Votre partenaire immobilier de confiance au Congo.">
-    <meta name="twitter:image" content="images/baniere.jpg">
-
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preload" as="image" href="images/baniere.jpg" fetchpriority="high">
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="images/logo.jpg">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-</head>
-<body id="top">
-    <a href="#contenu" class="skip-link">Aller au contenu principal</a>
-    <header class="header">
-        <div class="conteneur">
-            <nav class="navbar" aria-label="Navigation principale">
-                <a href="#top" class="logo">
-                    <img src="images/logo.jpg" alt="ImmoCool Logo" class="logo-img">
-                    <span class="logo-text">Immo <span>Cool</span></span>
-                </a>
-                <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-controls="nav-links" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <div class="overlay"></div>
-                <ul class="liens" id="nav-links">
-                    <li><a href="#accueil" class="active" aria-current="page">accueil</a></li>
-                    <li><a href="#services">services</a></li>
-                    <li><a href="#apropos">à propos</a></li>
-                    <li><a href="#contact">contact</a></li>
-                    <li><a href="#" class="buton">connexion</a></li>
-                </ul>   
-            </nav>
+<!doctype html>
+<html lang="FR-fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ImmoCool</title>
+    <link
+      rel="shortcut icon"
+      href="./src/assets/images/logo.jpg"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="./src/style/output.css" />
+    <link rel="stylesheet" href="./src/style/animations.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="main.js" defer></script>
+  </head>
+  <body class="bg-zinc-100 h-screen font-sans relative">
+    <header class="flex flex-col" id="home">
+      <nav class="navbar fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl">
+        <div class="brand">
+          <img
+            class="rounded-full border border-gray-400"
+            src="./src/assets/images/logo.jpg"
+            alt="logo de l'agence immoCool"
+            width="50"
+            loading="lazy"
+          />
+          <span class="text-3xl"> immoCool </span>
         </div>
+        <ul class="menu-links">
+          <li class="active"><a href="#" class="" title="acceuil">Home</a></li>
+          <li><a href="#service" class="" title="service">Service</a></li>
+          <li><a href="#about" class="" title="apropos">À propos</a></li>
+          <li><a href="#contact" class="" title="contact">Contact</a></li>
+        </ul>
+        <div class="flex gap-4 flex-center md:flex hidden">
+          <button
+            type="button"
+            class="btn btn-primary rounded-full md:flex hidden"
+          >
+            <i class="bi-person-fill md:text-1xl text-2xl"></i>
+            <span class="md:flex hidden">Mon Compte</span>
+          </button>
+        </div>
+      </nav>
+      <!-- section hero -->
+      <section
+        id="hero"
+        class="relative md:h-[921px] h-150 flex items-center justify-center overflow-hidden"
+      >
+        <div class="hero-img absolute inset-0 z-0">
+          <img
+            class="w-full h-full object-cover"
+            data-alt="luxury modern villa in Brazzaville Congo with infinity pool and palm trees at sunset with warm orange lighting"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvO_CLO7Hc1ARs1ugyuD6PBoNiq5neDWci1IKeby1Bmp8wHFDDodVdnmtyMuJhIR5o7Sh7_QkETZzOODnsVgF3VApXMU1-dVZphv_Hk4iWLsdFsvP_Aclpusu_K5C0tecEc8HLdEDTGWM6Oz43kryAngVWv2t7iZ-Lr9EoND6tbu0-zaYbXVZSWo1XxRJqPB4MSF0aiPNgIpog2Ss5uP2RtaihZMLgH8Q2C4WOdti1OA_CpiE7HqtOsILasWynrNRYDzV0sBZmV8c"
+            loading="lazy"
+          />
+        </div>
+        <div class="absolute inset-0 bg-black/30 flex-center flex-col">
+          <h1 class="text-white text-center text-5xl md:text-7xl font-semibold">
+            Trouvez votre futur chez-vous
+          </h1>
+          <!-- search container -->
+          <div
+            id="SearchContainer"
+            class="p-2 md:p-4 rounded-sm mt-8 ambient-shadow flex flex-col lg:flex-row items-stretch gap-6 md:gap-4 max-w-4xl mx-auto bg-white w-3/4 lg:divide-x-2 divide-gray-400/30"
+          >
+            <div class="flex flex-col items-start px-4">
+              <label for="typeOfHouse" class="search-label">Type</label>
+              <div class="relative">
+                <select
+                  name="typeOfHouse"
+                  id="typeOfHouse"
+                  class="text-slate-600 appearance-none bg-white border border-gray-300 rounded-lg px-4 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary cursor-pointer w-full"
+                  required
+                >
+                  <option value="appartement">Appartement</option>
+                  <option value="terrain">Terrain</option>
+                  <option value="villa">Villa</option>
+                </select>
+                <div
+                  class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"
+                >
+                  <i class="bi bi-chevron-down text-gray-500"></i>
+                </div>
+              </div>
+            </div>
+            <div class="flex-1 flex flex-col items-start justify-center px-4">
+              <label for="location" class="search-label">Localisation</label>
+              <input
+                type="text"
+                name="location"
+                id="location"
+                class="input-search"
+                placeholder="Brazzaville, PN..."
+                required
+              />
+            </div>
+            <div class="flex-1 flex flex-col items-start justify-center px-4">
+              <label for="SelecPrice" class="search-label">Budget Max</label>
+              <input
+                type="text"
+                name="SelectPrice"
+                id="SelectPrice"
+                class="w-full input-search"
+                placeholder="FCFA"
+                pattern="[0-9]+"
+                title="Veuillez entrer uniquement des chiffres"
+                required
+              />
+            </div>
+            <button class="btn-primary md:px-4 md:py-2 px-2 py-4">
+              Rechercher
+            </button>
+          </div>
+          <!-- //search container -->
+        </div>
+      </section>
     </header>
-
-    <main id="contenu" tabindex="-1">
-    <section class="baniere" id="accueil">
-        <div class="conteneur">
-            <div class="baniere-contenu" data-aos="fade-up" data-aos-delay="100">
-                <h1 class="titre">Bienvenue sur Immo <span>Cool</span></h1>
-                <p class="sous-titre">Votre partenaire immobilier de confiance</p>
-                <div class="recherche">
-                    <form class="formulaire" action="#" method="get">
-                        <fieldset>
-                            <legend class="sr-only">Recherche de propriétés</legend>
-                        <div class="groupe">
-                            <label for="type-bien" class="sr-only">Type de bien</label>
-                            <select id="type-bien" name="type" class="element" aria-label="Type de bien">
-                                <option value="">Type de bien</option>
-                                <option value="maison">Maison</option>
-                                <option value="appartement">Appartement</option>
-                                <option value="villa">Villa</option>
-                                <option value="local">Local</option>
-                            </select>
-                        </div>
-                        <div class="groupe">
-                            <label for="localisation" class="sr-only">Localisation</label>
-                            <select id="localisation" name="localisation" class="element" aria-label="Localisation">
-                                <option value="">Localisation</option>
-                                <option value="brazzaville">Brazzaville</option>
-                                <option value="pointe-noire">Pointe-Noire</option>
-                                <option value="dolisie">Dolisie</option>
-                                <option value="ouesso">Ouesso</option>
-                            </select>
-                        </div>
-                        <div class="groupe">
-                            <label for="budget" class="sr-only">Budget</label>
-                            <select id="budget" name="budget" class="element" aria-label="Budget">
-                                <option value="">Budget</option>
-                                <option value="1000000">1.000.000 FCFA</option>
-                                <option value="2000000">2.000.000 FCFA</option>
-                                <option value="3000000">3.000.000 FCFA</option>
-                                <option value="4000000">4.000.000 FCFA</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="buton">Rechercher</button>
-                        </fieldset>
-                    </form>
-                </div>
-            </div> 
+    <main class="">
+      <!-- stats -->
+      <section class="stats-section py-16 bg-zinc-300">
+        <div
+          class="max-w-screen-2xl mx-auto px-12 grid grid-cols-2 md:grid-cols-4 gap-8"
+        >
+          <div class="text-center">
+            <div class="text-4xl font-extrabold text-primary mb-2">+1000</div>
+            <div
+              class="text-outline font-label uppercase tracking-widest text-xs"
+            >
+              Biens répertoriés
+            </div>
+          </div>
+          <div class="text-center">
+            <div
+              class="text-4xl font-headline font-extrabold text-primary mb-2"
+            >
+              +500
+            </div>
+            <div
+              class="text-outline font-label uppercase tracking-widest text-xs"
+            >
+              Clients satisfaits
+            </div>
+          </div>
+          <div class="text-center">
+            <div
+              class="text-4xl font-headline font-extrabold text-primary mb-2"
+            >
+              12
+            </div>
+            <div
+              class="text-outline font-label uppercase tracking-widest text-xs"
+            >
+              Villes couvertes
+            </div>
+          </div>
+          <div class="text-center">
+            <div
+              class="text-4xl font-headline font-extrabold text-primary mb-2"
+            >
+              24h
+            </div>
+            <div
+              class="text-outline font-label uppercase tracking-widest text-xs"
+            >
+              Réponse moyenne
+            </div>
+          </div>
         </div>
-    </section>
-
-    <section class="apropos" id="apropos">
-        <div class="conteneur">
-            <div class="apropos-contenu">
-                <div class="apropos-image" data-aos="fade-right" data-aos-delay="200">
-                    <img src="images/apropos.jpg" alt="À propos de ImmoCool" loading="lazy" decoding="async">
-                </div>
-                <div class="apropos-texte" data-aos="fade-left" data-aos-delay="200">
-                    <h2 class="titre">À propos de <span>ImmoCool</span></h2>
-                    <p class="description">Bienvenue chez ImmoCool, votre partenaire de confiance dans le secteur immobilier au Congo. Depuis notre création, nous nous engageons à offrir des services immobiliers de qualité supérieure à nos clients.</p>
-                    
-                    <div class="caracteristiques">
-                        <div class="caracteristique">
-                            <i class="icon fas fa-home"></i>
-                            <h3>Large Sélection</h3>
-                            <p>Plus de 1000 propriétés disponibles dans tout le pays</p>
-                        </div>
-                        <div class="caracteristique">
-                            <i class="icon fas fa-handshake"></i>
-                            <h3>Service Personnalisé</h3>
-                            <p>Une équipe dédiée à votre recherche immobilière</p>
-                        </div>
-                        <div class="caracteristique">
-                            <i class="icon fas fa-star"></i>
-                            <h3>Qualité Garantie</h3>
-                            <p>Des biens sélectionnés et vérifiés par nos experts</p>
-                        </div>
-                    </div>
-                    
-                    <a href="#contact" class="buton">Contactez-nous</a>
-                </div>
+      </section>
+      <!-- //stats -->
+      <section id="product" class="flex flex-col p-8 bg-white/70">
+        <!-- proprieties -->
+        <div class="w-full p-4 md:p-8">
+          <div
+            class="flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8"
+          >
+            <div class="gap-2 text-center md:text-left">
+              <h2 class="text-2xl md:text-3xl font-bold">
+                Propriétés de Prestige
+              </h2>
+              <p class="text-slate-600 text-base md:text-lg max-w-md">
+                Une sélection exclusive des plus beaux biens immobiliers au
+                Congo, soigneusement choisis pour vous.
+              </p>
             </div>
+            <span
+              class="underline flex items-center gap-2 text-primary cursor-pointer hover:text-primary/80 transition-colors"
+            >
+              voir tous les catalogues
+              <i
+                class="bi-arrow-right group-hover:translate-x-1 transition-transform"
+              ></i>
+            </span>
+          </div>
         </div>
-    </section>
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:grid-cols-2">
+          <div
+            class="property-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 min-h-[500px] flex flex-col"
+          >
+            <!-- IMAGE -->
+            <div class="relative h-64 w-full overflow-hidden">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7GxCS9DTMXTJjXEQMWPbJp9pkLhRNxSLrZMQIGcBnFFZMeM3cZ0mN6hAef1jC7aYcOeWsD22Y3qIyEmU0sN1SCqRksM8eDrXqgG5azIIFRW2f5rd9L5qeEXvxmknnakBOEaY5mWjRp4MpdjkkT-t7QGldi211ygga7-yzonZZhR_KM83i9m6Epn9QQlkPi-vg9BPSLUPQlg9s-Ugy4rir42vmhtWbi-mSR5L_tEc5Y8cKNPrWToQvZ88xnYZqAjI-u0mWfn91zeU"
+                class="w-full h-full object-cover transition-transform duration-700 hover:scale-110 group-hover:scale-110"
+                alt="ultra modern penthouse apartment balcony view with glass railings and city lights of Pointe-Noire at twilight"
+                loading="lazy"
+              />
 
-    <section class="services" id="services">
-        <div class="conteneur">
-            <div class="centre" data-aos="fade-up">
-                <h2 class="titre">Nos services</h2>
-                <p class="sous-titre">Découvrez nos services de qualité</p>
+              <!-- BADGE TOP -->
+              <span
+                class="badge absolute top-4 left-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase"
+              >
+                Exclusivité
+              </span>
+
+              <!-- PRIX -->
+              <span
+                class="absolute bottom-4 left-4 bg-black/70 text-white text-sm font-bold px-4 py-2 rounded-lg"
+              >
+                450.000.000 FCFA
+              </span>
             </div>
 
-            <div class="services-grille" data-aos="fade-up" data-aos-delay="300">
-                <div class="carte-service" data-aos="flip-up" data-aos-delay="100">
-                    <div class="details-service">
-                        <h3 class="titre-service">Achat</h3>
-                        <p class="description-service">Achetez votre maison de rêve avec nous.</p>
-                    </div>
+            <!-- CONTENU -->
+            <div class="p-6 flex flex-col justify-between flex-grow">
+              <div>
+                <h3 class="text-xl font-bold mb-2">Penthouse Horizon</h3>
+                <p class="text-gray-500 text-sm flex items-center gap-1 mb-4">
+                  <i class="bi bi-geo-alt"></i> Pointe-Noire, Centre-Ville
+                </p>
+                <div class="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                  <span class="flex items-center gap-1">
+                    <i class="bi bi-house-door"></i> 3 ch.
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <i class="bi bi-droplet"></i> 2 sdb
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <i class="bi bi-arrows-fullscreen"></i> 150m²
+                  </span>
                 </div>
-
-                <div class="carte-service" data-aos="flip-up" data-aos-delay="100">
-                    <div class="details-service">
-                        <h3 class="titre-service">Vente</h3>
-                        <p class="description-service">Vendez votre propriété rapidement et facilement.</p>
-                    </div>
-                </div>
-
-                <div class="carte-service" data-aos="flip-up" data-aos-delay="100">
-                    <div class="details-service">
-                        <h3 class="titre-service">Location</h3>
-                        <p class="description-service">Trouvez la maison parfaite à louer.</p>
-                    </div>
-                </div>
+              </div>
+              <button
+                class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all duration-200"
+              >
+                Voir détails
+              </button>
             </div>
+          </div>
+          <div
+            class="property-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 min-h-[500px] flex flex-col"
+          >
+            <!-- IMAGE -->
+            <div class="relative h-64 w-full overflow-hidden">
+              <img
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBlzW2kH7iU4oVsZNLv5zy7irc9vF_PknOEzGPVN0-U_232yIKeBWEb8hC6SBlOuXBpwtBEMdc8dflDMYafsJm4miZoWXModORyb8hONwmBCq5J_PtuN0pOyMROCsaR-8UvDMnyAZfNT1pE7vgaWKRBdD-X67hb1f084o59cooU1IwghKNwXMttOsHd44UpOigTN_fET9SpPm8k0OueTvC4Ch9sY7KRp3u8wY2lXtJB_WigRvmlcWwP4kfDTYIlS7ew4G24LV0xOQ"
+                class="w-full h-full object-cover transition-transform duration-700 hover:scale-110 group-hover:scale-110"
+                alt="contemporary family villa with large floor to ceiling windows and manicured garden in Brazzaville residential area"
+                loading="lazy"
+              />
+
+              <!-- BADGE TOP -->
+              <span
+                class="absolute top-4 left-4 bg-emerald-800/70 text-white text-xs font-bold px-3 py-1 rounded-full uppercase"
+              >
+                Nouveau
+              </span>
+
+              <!-- PRIX -->
+              <span
+                class="absolute bottom-4 left-4 bg-black/70 text-white text-sm font-bold px-4 py-2 rounded-lg"
+              >
+                320.000.000 FCFA
+              </span>
+            </div>
+
+            <!-- CONTENU -->
+            <div class="p-6 flex flex-col justify-between flex-grow">
+              <div>
+                <h3 class="text-xl font-bold mb-2">Villa Moderne</h3>
+                <p class="text-gray-500 text-sm flex items-center gap-1 mb-4">
+                  <i class="bi bi-geo-alt"></i> Brazzaville, Plateau
+                </p>
+                <div class="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                  <span class="flex items-center gap-1">
+                    <i class="bi bi-house-door"></i> 4 ch.
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <i class="bi bi-droplet"></i> 3 sdb
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <i class="bi bi-arrows-fullscreen"></i> 200m²
+                  </span>
+                </div>
+              </div>
+              <button
+                class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all duration-200"
+              >
+                Voir détails
+              </button>
+            </div>
+          </div>
+          <div
+            class="property-card bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 min-h-[500px] flex flex-col"
+          >
+            <!-- IMAGE -->
+            <div class="relative h-64 w-full overflow-hidden">
+              <img
+                loading="lazy"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC42VLKKcO_E9E2dlk-JGXh7Uubgx8WN7unHoE2NqgnUKNjREECGyP596cuhSfXi3RmddecXDxx0d6Tjvt_1w-gJ5wrdKW23ROer-SQP13Im2cuFE0vEtkiVZzF-duq-m4v2Fvv1F1cRNW5b8PZyg3gQ0rDkQBrH1FxauaPCgRENgp7QgO83b0Gw1ev2unQk8yHcLenUUQI1WT2j6pjB1j8Mz_5YRXKpRWYlNKz-0WQ3Ms4aXPrR1kjQ56WG_63-Gjc9kUw_pRIzaA"
+                class="w-full h-full object-cover transition-transform duration-700 hover:scale-110 group-hover:scale-110"
+                alt="minimalist architectural villa design with clean lines and white concrete facade under clear blue sky"
+              />
+
+              <!-- BADGE TOP -->
+              <span
+                class="absolute top-4 left-4 bg-orange-600/70 text-white text-xs font-bold px-3 py-1 rounded-full uppercase"
+              >
+                Promo
+              </span>
+
+              <!-- PRIX -->
+              <span
+                class="absolute bottom-4 left-4 bg-black/70 text-white text-sm font-bold px-4 py-2 rounded-lg"
+              >
+                180.000.000 FCFA / louer
+              </span>
+            </div>
+
+            <!-- CONTENU -->
+            <div class="p-6 flex flex-col justify-between grow">
+              <div>
+                <h3 class="text-xl font-bold mb-2">Appartement Cosy</h3>
+                <p class="text-gray-500 text-sm flex items-center gap-1 mb-4">
+                  <i class="bi bi-geo-alt"></i> Dolisie, Centre
+                </p>
+                <div class="flex items-center gap-4 text-sm text-gray-600 mb-4">
+                  <span class="flex items-center gap-1">
+                    <i class="bi bi-house-door"></i> 2 ch.
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <i class="bi bi-droplet"></i> 1 sdb
+                  </span>
+                  <span class="flex items-center gap-1">
+                    <i class="bi bi-arrows-fullscreen"></i> 85m²
+                  </span>
+                </div>
+              </div>
+              <button
+                class="w-full bg-primary text-white py-2 px-4 rounded-lg hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all duration-200"
+              >
+                Voir détails
+              </button>
+            </div>
+          </div>
         </div>
-    </section>
-
-    <section class="maison">
-        <div class="conteneur">
-            <div class="centre" data-aos="fade-up">
-                <h2 class="titre">Nos maisons à la une</h2>
-                <p class="sous-titre">Découvrez nos biens les plus prestigieux choisis pour vous</p>
-            </div>
-
-            <div class="maison-grille" data-aos="fade-up" data-aos-delay="300">
-                <div class="carte-maison" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="image-maison">
-                        <img src="images/service.jpg" loading="lazy" decoding="async" alt="Maison 1">
-                    </div>
-                    <div class="details-maison">
-                        <h3 class="titre-maison">Maison de luxe</h3>
-                        <p class="description-maison">Une magnifique maison avec piscine et jardin.</p>
-                        <p class="prix-maison">Prix: 5000000 Fcfa</p>
-                        <a href="" class="buton">Voir plus</a>
-                    </div>
-                </div>
-
-                <div class="carte-maison" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="image-maison">
-                        <img src="images/service.jpg" loading="lazy" decoding="async" alt="Maison 2">
-                    </div>
-                    <div class="details-maison">
-                        <h3 class="titre-maison">Maison de luxe</h3>
-                        <p class="description-maison">Une magnifique maison avec piscine et jardin.</p>
-                        <p class="prix-maison">Prix: 5000000 Fcfa</p>
-                        <a href="" class="buton">Voir plus</a>
-                    </div>
-                </div>
-
-                <div class="carte-maison" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="image-maison">
-                        <img src="images/service.jpg" loading="lazy" decoding="async" alt="Maison 3">
-                    </div>
-                    <div class="details-maison">
-                        <h3 class="titre-maison">Maison de luxe</h3>
-                        <p class="description-maison">Une magnifique maison avec piscine et jardin.</p>
-                        <p class="prix-maison">Prix: 5000000 Fcfa</p>
-                        <a href="" class="buton">Voir plus</a>
-                    </div>
-                </div>
-            </div>
+      </section>
+      <!-- service -->
+      <section id="service" class="mt-10 text-center">
+        <h2 class="text-gray-800 md:text-3xl font-bold text-2xl py-2">
+          Une solution pour chaque projet
+          <span
+            class="block mx-auto w-25 h-1.5 bg-primarry mt-3 rounded"
+          ></span>
+        </h2>
+        <!-- service cards -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mt-8 px-4 py-2 items-center md:justify-items-center text-primary"
+        >
+          <div
+            class="service-card rounded-lg bg-white shadow-sm md:size-85 flex flex-center flex-col space-y-5 w-auto md:p-0 py-6 px-4"
+          >
+            <i class="bi-house-door text-5xl md:text-6xl"></i>
+            <h3 class="text-xl md:text-3xl font-bold">Acheter</h3>
+            <p class="p-2">
+              Accédez aux meilleures offres du marché immobilier congolais avec
+              un accompagnement juridique complet.
+            </p>
+            <a href="" class="underline font-semibold"> Découvrir les biens </a>
+          </div>
+          <div
+            class="service-card rounded-lg bg-white shadow-sm md:size-85 flex flex-center flex-col space-y-5 w-auto md:p-0 py-6 px-4"
+          >
+            <i class="bi-tag-fill text-5xl md:text-6xl"></i>
+            <h3 class="text-xl md:text-3xl font-bold">Vendre</h3>
+            <p class="p-2">
+              Vendez votre propriété au meilleur prix grâce à notre réseau
+              d'investisseurs qualifiés.
+            </p>
+            <a href="" class="underline font-semibold mt-3.5">
+              Estimer mon bien
+            </a>
+          </div>
+          <div
+            class="service-card rounded-lg bg-white shadow-sm md:size-85 flex flex-center flex-col space-y-5 w-auto md:p-0 py-6 px-4"
+          >
+            <i class="bi-key-fill text-5xl md:text-6xl"></i>
+            <h3 class="text-xl md:text-3xl font-bold">Louer</h3>
+            <p class="p-2">
+              Trouvez rapidement une location qui correspond à votre style de
+              vie et à votre budget.
+            </p>
+            <a href="" class="underline font-semibold">Voir les locations</a>
+          </div>
         </div>
-    </section>
-    
-    <section class="contact" id="contact">
-        <div class="conteneur">
-            <h2 class="titre">Contactez-nous</h2>
-            <p class="sous-titre">Nous sommes là pour répondre à toutes vos questions</p>
-            
-            <div class="contact-contenu" data-aos="fade-up" data-aos-delay="200">
-                <div class="contact-info" data-aos="fade-right" data-aos-delay="300">
-                    <div class="info-item">
-                        <i class="icon fas fa-map-marker-alt"></i>
-                        <h3>Notre adresse</h3>
-                        <p>123 Avenue de la paix <br>Brazzaville, Congo</p>
-                    </div>
-                    
-                    <div class="info-item">
-                        <i class="icon fas fa-phone"></i>
-                        <h3>Téléphone</h3>
-                        <p>+242 06 933 90 97<br>+242 05 585 23 59</p>
-                    </div>
-                    
-                    <div class="info-item">
-                        <i class="icon fas fa-envelope"></i>
-                        <h3>Email</h3>
-                        <p>
-                            <a href="mailto:immocool@gmail.com">immocool@gmail.com</a><br>
-                            <a href="https://immocool.cg" target="_blank" rel="noopener noreferrer">www.immocool.cg</a>
-                        </p>
-                    </div>
-                    
-                    <div class="info-item">
-                        <i class="icon fas fa-clock"></i>
-                        <h3>Horaires d'ouverture</h3>
-                        <p>Lundi - Vendredi: 8h - 18h<br>Samedi: 9h - 15h</p>
-                    </div>
-                </div>
-                
-                <div class="contact-formulaire" data-aos="fade-left" data-aos-delay="300">
-                    <form id="contactForm" class="formulaire-contact" novalidate>
-                        <div class="formulaire-element">
-                            <label for="nom" class="sr-only">Votre nom</label>
-                            <input type="text" id="nom" name="nom" placeholder="Votre nom" required autocomplete="name" aria-describedby="nomError">
-                            <small class="error-message" id="nomError" aria-live="polite"></small>
-                        </div>
-                        
-                        <div class="formulaire-element">
-                            <label for="email" class="sr-only">Votre email</label>
-                            <input type="email" id="email" name="email" placeholder="Votre email" required autocomplete="email" aria-describedby="emailError">
-                            <small class="error-message" id="emailError" aria-live="polite"></small>
-                        </div>
-                        
-                        <div class="formulaire-element">
-                            <label for="telephone" class="sr-only">Votre téléphone</label>
-                            <input type="tel" id="telephone" name="telephone" placeholder="Votre téléphone" required autocomplete="tel" inputmode="tel" aria-describedby="telephoneError">
-                            <small class="error-message" id="telephoneError" aria-live="polite"></small>
-                        </div>
-                        
-                        <div class="formulaire-element">
-                            <label for="sujet" class="sr-only">Sujet</label>
-                            <select id="sujet" name="sujet" required aria-describedby="sujetError">
-                                <option value="">Sélectionnez un sujet</option>
-                                <option value="achat">Achat de bien</option>
-                                <option value="vente">Vente de bien</option>
-                                <option value="location">Location</option>
-                                <option value="autre">Autre demande</option>
-                            </select>
-                            <small class="error-message" id="sujetError" aria-live="polite"></small>
-                        </div>
-                        
-                        <div class="formulaire-element">
-                            <label for="message" class="sr-only">Votre message</label>
-                            <textarea id="message" name="message" placeholder="Votre message" required rows="5" aria-describedby="messageError" autocomplete="off"></textarea>
-                            <small class="error-message" id="messageError" aria-live="polite"></small>
-                        </div>
-                        
-                        <button type="submit" id="submitBtn" class="buton">Envoyer le message</button>
-                        <div id="formStatus" class="form-status" aria-live="polite">
-                            <div id="spinner" class="spinner hidden" role="status" aria-live="polite" aria-label="Chargement"></div>
-                            <div id="successMessage" class="success-message hidden" role="alert" aria-live="polite" aria-hidden="true">
-                                <i class="fas fa-check-circle"></i>
-                                <p>Votre message a été envoyé avec succès! Nous vous contacterons bientôt.</p>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+      </section>
+      <!-- section about -->
+      <section
+        id="about"
+        class="flex flex-col lg:flex-row items-center bg-white/70 px-10 py-20 gap-15 mt-10"
+      >
+        <div class="flex-1 overflow-hidden">
+          <img
+            class="rounded-xl relative z-10 ambient-shadow size-140 object-cover hover:scale-110 transition-transform duration-700"
+            data-alt="luxury hotel entrance in Brazzaville with modern African architectural details and lush landscaping"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsuOqNMnpLc_ZjqKxkAeqymxLpCQoWrTuI3VgA-palFrWQMThIB0511cht6k2YnQBHM68a9qRpRZv7BFYCCQokvwWNFIABpdo7ZBHIrrlRYtLKrEGMlCRQ43VzMRF2r2N--YO3BTVqtNbRHU_UMOc8UJf5HViZ63-CyeRd2z3e7RFvFzvUil_wphuNzTw_Ha0FVdbpwrUu5gDet40YvaUyj6TvnF_ihGvXRMQbC4CebU5LKSwvHHhxg2H80eJlJFnF3W2tUKlXzzk"
+            loading="lazy"
+          />
         </div>
-    </section>
+        <div class="flex-1 space-y-8 p-4">
+          <h2
+            class="lg:text-6xl mt-10 sm:text-4xl text-3xl font-bold text-slate-800"
+          >
+            L'excellence au cœur de l'immobilier congolais.
+          </h2>
+          <p class="text-2xl mb-5">
+            ImmoCool redéfinit les standards de l'immobilier au Congo. Plus
+            qu'une simple plateforme, nous sommes votre partenaire privilégié
+            pour bâtir votre patrimoine. Notre expertise locale alliée à des
+            standards internationaux vous garantit une expérience sereine et
+            transparente.
+          </p>
+          <div>
+            <div class="flex items-center gap-4 p-2 text-primary">
+              <i
+                class="bi bi-patch-check md:text-4xl bg-gray-200/80 rounded-lg p-2"
+              ></i>
+              <p class="font-extralight">
+                <span class="block md:text-lg font-normal">
+                  Annonces vérifiées
+                </span>
+                Chaque bien est rigoureusement contrôlé par nos agents.
+              </p>
+            </div>
+            <div class="flex items-center gap-4 p-2 text-primary">
+              <i
+                class="bi bi-patch-check md:text-4xl bg-gray-200/80 rounded-lg p-2"
+              ></i>
+              <p class="font-extralight">
+                <span class="block font-normal md:text-lg">
+                  Assistance Juridique
+                </span>
+                Un notaire dédié pour safegarder toutes vos transactions.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- section contact -->
+      <section id="contact" class="p-10 bg-gray-300/70">
+        <div class="bg-white rounded-2xl flex flex-col lg:flex-row">
+          <form
+            action="/api/contacts"
+            id="form"
+            class="p-8 space-y-8 space-x-4 md:flex-1 mt-1h-full"
+          >
+            <div class="flex lg:flex-row flex-col gap-7">
+              <input
+                id="name"
+                type="text"
+                placeholder="Nom complet"
+                class="input flex-1"
+                required
+              />
 
+              <input
+                type="email"
+                placeholder="Email"
+                id="email"
+                class="input flex-1 peer"
+                required
+              />
+            </div>
+            <input
+              id="subject"
+              type="text"
+              placeholder="sujet"
+              class="input block md:w-[97%] w-full"
+              required
+            />
+
+            <textarea
+              name="message"
+              id="message"
+              class="input w-full md:w-3/4 h-40 resize-none"
+              required
+            ></textarea>
+
+            <button
+              type="submit"
+              class="btn btn-primary active:scale-3d md:w-full text-center flex flex-center rounded my-8"
+            >
+              Envoyer
+            </button>
+          </form>
+          <!-- carte -->
+          <div class="md:flex-1 relative overflow-hidden bg-gray-200/70">
+            <img
+              class="w-full h-full object-cover grayscale opacity-50"
+              alt="abstract map of Republic of Congo blue grey style"
+              src="https://tse1.mm.bing.net/th/id/OIP.QierGmNfF4eIHhDnHFeDGQHaHa?pid=ImgDet&w=187&h=187&c=7&dpr=1.3&o=7&rm=3"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-black/30 flex-center flex-col">
+              <div
+                class="mx-auto bg-white/70 rounded-xl shadow backdrop-blur-2xl p-6 space-y-3"
+              >
+                <h1 class="text-center text-4xl font-bold">Siège Social</h1>
+                <p class="italic">
+                  Avenue de l'Indépendance, Brazzaville, Congo
+                </p>
+                <a href="" class="text-primary bi-mailbox-flag space-x-2"
+                  >&nbsp; serviceclient@immoCool.cg</a
+                >
+                <p class="text-primary bi-telephone">&nbsp; +242 06 000 0000</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer class="footer">
-        <div class="conteneur">
-            <div class="footer-contenu" data-aos="fade-up" data-aos-delay="100">
-                <div class="footer-logo">
-                    <a href="#" class="logo">
-                        <img src="images/logo.jpg" alt="ImmoCool Logo" class="logo-img">
-                        <span class="logo-text">Immo<span>Cool</span></span>
-                    </a>
-                    <p>Votre partenaire immobilier de confiance au Congo</p>
-                </div>
-                
-                <div class="footer-liens">
-                    <h3>Liens rapides</h3>
-                    <ul>
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#apropos">À propos</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-social">
-                    <h3>Suivez-nous</h3>
-                    <div class="social-liens">
-                        <a href="#" class="social-lien">Facebook</a>
-                        <a href="#" class="social-lien">Instagram</a>
-                        <a href="#" class="social-lien">Twitter</a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-fond">
-                <p>&copy; <span id="currentYear"></span> ImmoCool. Tous droits réservés.</p>
-            </div>
+    <section id="bottom-bar" class="bottom-bar">
+      <a
+        href="#service"
+        class="bg-white/70 backdrop-blur-2xl bi-moon-stars text-xl border border-gray-400 rounded-full size-11 flex-center flex p-4"
+      ></a>
+      <div
+        class="flex gap-2 rounded-full border border-gray-400 sm:px-8 py-1 bg-white/70 backdrop-blur-2xl px-2 sm:gap-5"
+      >
+        <a
+          href="#home"
+          class="bi-house text-2xl border border-gray-500 rounded-full size-11 flex-center flex p-4"
+        ></a>
+        <a
+          href="#contact"
+          class="bi-telephone text-2xl border border-gray-500 rounded-full size-11 flex-center flex p-4"
+        ></a>
+        <a
+          href="#service"
+          class="bi-tag-fill text-2xl border border-gray-500 rounded-full size-11 flex-center flex p-4"
+        ></a>
+      </div>
+      <a
+        href="#service"
+        class="bg-white/70 backdrop-blur-2xl bi-person text-2xl border border-b-gray-700 rounded-full size-11 flex-center flex p-4"
+      ></a>
+    </section>
+  </body>
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-white py-16 px-12">
+    <div
+      class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12"
+    >
+      <div class="space-y-6">
+        <div class="text-2xl font-black text-white">ImmoCool</div>
+        <p class="text-slate-500 font-body text-sm leading-relaxed">
+          Le leader de l'immobilier premium en République du Congo. Découvrez
+          une nouvelle façon de vivre l'immobilier.
+        </p>
+      </div>
+      <div>
+        <h4 class="font-bold mb-6">Navigation</h4>
+        <ul class="space-y-4 text-slate-500 text-sm">
+          <li>
+            <a class="hover:text-white transition-colors" href="#"
+              >Acheter un bien</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-white transition-colors" href="#"
+              >Louer une résidence</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-white transition-colors" href="#"
+              >Estimer mon bien</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-white transition-colors" href="#"
+              >Publier une annonce</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold mb-6">Société</h4>
+        <ul class="space-y-4 text-slate-500 text-sm">
+          <li>
+            <a class="hover:text-white transition-colors" href="#">À Propos</a>
+          </li>
+          <li>
+            <a class="hover:text-white transition-colors" href="#"
+              >Nos Agences</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-white transition-colors" href="#"
+              >Blog Immobilier</a
+            >
+          </li>
+          <li>
+            <a class="hover:text-white transition-colors" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-headline font-bold mb-6">Newsletter</h4>
+        <p class="text-slate-500 text-sm mb-4">
+          Recevez les meilleures offres en avant-première.
+        </p>
+        <div class="flex">
+          <input
+            class="bg-slate-900 border-none rounded-l-lg p-3 w-full text-white text-sm focus:ring-0"
+            placeholder="Email"
+            type="email"
+            required
+          />
+          <button
+            class="bi-send bg-primary px-4 rounded-r-lg hover:bg-primary-container transition-all"
+          ></button>
         </div>
-    </footer>
-
-    <a href="#top" class="scroll-top" id="scrollTop" aria-label="Retour en haut de page">
-        <i class="fas fa-arrow-up"></i>
-    </a>
-    <script defer src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script defer src="script.js"></script>
-</body>
+      </div>
+    </div>
+    <div
+      class="max-w-screen-2xl mx-auto mt-20 pt-8 border-t border-slate-900 flex flex-col md:flex-row justify-between items-center gap-4"
+    >
+      <p class="text-slate-500 text-sm">
+        &copy; 2024 ImmoCool. L'excellence immobilière.
+      </p>
+      <div class="flex gap-8 text-slate-500 text-sm">
+        <a class="hover:text-white transition-colors" href="#"
+          >Mentions Légales</a
+        >
+        <a class="hover:text-white transition-colors" href="#"
+          >Confidentialité</a
+        >
+        <a class="hover:text-white transition-colors" href="#">Presse</a>
+      </div>
+    </div>
+  </footer>
 </html>
